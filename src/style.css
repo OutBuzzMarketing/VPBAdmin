@@ -1,0 +1,110 @@
+section#navbar {
+    width: 100%;
+    display: inline-grid;
+    background: beige;
+    padding: 10px 0;
+}
+a.navbar-item {
+    color: #333;
+    font-size: 16px;
+    margin: 0 40px;
+    float: right;
+    text-decoration: none;
+}
+
+section#sidebar{
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    float: left;
+}
+.sidebar-links {
+    width: 100%;
+    display: inline-grid;
+}
+a.sidebar-item {
+    color: #333;
+    margin: 15px 20px;
+    font-size: 15px;
+    text-decoration: none;
+}
+section.table {
+    width: 100%;
+    background: bisque;
+    padding: 100px 0;
+    text-align: center !important;
+}
+
+img.sidebar-logo {
+    width: 300px;
+}
+
+
+  .about.text {
+    padding: 85px 0;
+}
+.about.text h1 {
+    font-size: 73px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.about.text p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+section.team{
+    padding: 100px 150px 180px 150px;
+
+}
+section.team img {
+    border-radius: 7px;
+}
+
+.team.text{
+    text-align: center;
+}
+.team.text h1 {
+    font-size: 33px;
+    margin: 20px auto;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.team.text h5 { 
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.title h1 {
+    font-weight: 600;
+    font-size: 55px !important;
+    margin: 20px 0 40px 0;
+    letter-spacing: 1px;
+}
+a.copyright {
+    font-size: 17px;
+    color: #fafafa;
+    font-weight: 500;
+}
+img.footer-logo {
+    float: right;
+    width: 250px;
+}
+
+.col-4{
+    text-align: center;
+}
+
+section#footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: beige;
+}
+section#footer p {
+    font-size: 13px;
+    padding: 0 10px;
+}
