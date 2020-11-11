@@ -14,12 +14,7 @@ class App extends Component {
     return (
         <Router>
           <section id="sidebar">
-              <h1>navigation</h1>
-                <nav>
-                  <ul>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
+                  <ul id="sidebar">
                     <li>
                       <Link to="/dashboard">Dashboard</Link>
                     </li>
@@ -45,7 +40,6 @@ class App extends Component {
                       <Link to="/stationery">Stationery</Link>
                     </li>
                   </ul>
-                </nav>
               </section>
 
                 <Route path="/dashboard" component={dashboard} />

@@ -21,23 +21,75 @@ section#sidebar{
     position: fixed;
     float: left;
 }
-.sidebar-links {
+
+ul#sidebar li {
+    margin: 20px 10px;
+}
+ul#sidebar li a {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+}
+ul#sidebar {
+    list-style: none;
+}
+section.outer-main {
+    width: 85%;
+    text-align: center;
+    display: inline-block;
+    float: right;
+}
+button#switch_button {
+    float: right;
+    margin: 10px;
+}
+.table-box h1 {
+    font-size: 30px;
+}
+.table-box {
     width: 100%;
     display: inline-grid;
+    margin-top: 60px;
 }
-a.sidebar-item {
-    color: #333;
-    margin: 15px 20px;
-    font-size: 15px;
-    text-decoration: none;
+table.main-table {
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px #eee;
+    margin: 50px 0;
 }
-section.table {
-    width: 100%;
-    background: bisque;
-    padding: 100px 0;
-    text-align: center !important;
+th, td {
+    padding: 10px 50px;
+}
+.card:nth-child(even) {
+    background-color: #eee;
 }
 
+td#view-more {
+    float: right;
+}
+.btn-primary{
+    background: #999 !important;
+    color: #333 !important;
+    border: #999 !important;
+    outline: none !important;
+}
+.card{
+    border: none !important;
+}
+button.edit.btn.btn-primary {
+    background: #d2d224 !important;
+}
+button.delete.btn.btn-primary {
+    background: #ed3434 !important;
+}
+.collapse.show {
+    background: #ddd;
+}
+.collapse.show .card-body{
+    padding: 0 30px;
+}
+thead {
+    border-bottom: 1px solid #ccc;
+}
 img.sidebar-logo {
     width: 300px;
 }
@@ -100,7 +152,7 @@ img.footer-logo {
 
 section#footer {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background: beige;
 }
