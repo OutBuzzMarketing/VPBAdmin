@@ -26,8 +26,10 @@ const Table = () => {
                 <Row>
                     <Col md="12">
                         <div className="table-box">
+                            {!isAddClicked ?
+                                <div>
                             <h1> School </h1>
-                            {!isAddClicked ? <table className="main-table">
+                                <table className="main-table">
                                 <Accordion>
                                     <tr>
                                         <th> # </th>
@@ -119,7 +121,7 @@ const Table = () => {
                                     </Card>
                                 </Accordion>
 
-                            </table> : <div className="main-table">
+                            </table></div> : <div className="main-table">
                                     <h1>HEYY</h1>
                                     <p>
                                         <input type="text"></input>
