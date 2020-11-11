@@ -26,9 +26,19 @@ const Table = () => {
                     <Col md="12">
                         <div className="table-box">
                             {!isAddClicked ?
+                                <div>
+                            <h1> School </h1>
                                 <table className="main-table">
-                                <h1> School </h1>
-                                    <Accordion>
+                                <Accordion>
+                                    <tr>
+                                        <th> # </th>
+                                        <th> Image </th>
+                                        <th> Navigation </th>
+                                        <th> Edit </th>
+                                        <th> Delete </th>
+                                        <th>View Details</th>
+                                    </tr>
+                                    <Card>
                                         <tr>
                                             <th> # </th>
                                             <th> Image </th>
@@ -121,8 +131,13 @@ const Table = () => {
 
                                 </table>
 
+<<<<<<< HEAD
                                 : <div className="form-main">
                                     <h1>Add School Name</h1>
+=======
+                            </table></div> : <div className="main-table">
+                                    <h1>HEYY</h1>
+>>>>>>> 9a0d8df8b264c6e049342be4ace1d675bb9b1cc7
                                     <p>
                                         <input type="text"> </input>
                                         <input type="file"> </input>
