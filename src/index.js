@@ -14,7 +14,6 @@ ReactDOM.render(
     <Navbar />
       <Sidebar />
       <App />
-    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

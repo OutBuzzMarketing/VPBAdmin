@@ -7,7 +7,6 @@ import {
 import Image from '../images/dummy.jpg';
 
 import { Button, Collapse, Card } from 'react-bootstrap';
-import AddSchoolForm from '../Forms/AddSchool'
 import Accordion from 'react-bootstrap/Accordion'
 
 const Table = () => {

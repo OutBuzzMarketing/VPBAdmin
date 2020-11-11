@@ -13,13 +13,14 @@ a.navbar-item {
 }
 
 section#sidebar{
-    background: #fafafa;
+    background: #eee;
     margin: 0;
     padding: 0;
     width: 15%;
     height: 100vh;
     position: fixed;
     float: left;
+    top: 0;
 }
 
 ul#sidebar li {
@@ -30,8 +31,23 @@ ul#sidebar li a {
     font-size: 17px;
     font-weight: 400;
 }
+ul#sidebar li img {
+    width: 110px;
+}
 ul#sidebar {
     list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.row {
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    display: inherit !important;
+}
+.btn {
+    font-size: 16px !important; 
+    padding: 5px 10px !important;
 }
 section.outer-main {
     width: 85%;
@@ -84,11 +100,36 @@ button.delete.btn.btn-primary {
 .collapse.show {
     background: #ddd;
 }
+/*
 .collapse.show .card-body{
     padding: 0 30px;
 }
+*/
 thead {
     border-bottom: 1px solid #ccc;
+}
+form {
+    display: inline-grid;
+    background: beige;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px #ccc;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+input#name, input#image {
+    margin: 5px 0 15px 0;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 10px;
+}
+button.submit-form {
+    background: #999;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
 }
 img.sidebar-logo {
     width: 300px;
