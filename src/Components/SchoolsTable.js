@@ -7,7 +7,6 @@ import {
 import Image from '../images/dummy.jpg';
 
 import { Button, Collapse, Card } from 'react-bootstrap';
-import AddSchoolForm from '../Forms/AddSchool'
 import Accordion from 'react-bootstrap/Accordion'
 
 const Table = () => {
@@ -26,104 +25,107 @@ const Table = () => {
                 <Row>
                     <Col md="12">
                         <div className="table-box">
-                            <h1> School </h1>
-                            {!isAddClicked ? <table className="main-table">
-                                <Accordion>
-                                    <tr>
-                                        <th> # </th>
-                                        <th> Image </th>
-                                        <th> Navigation </th>
-                                        <th> Edit </th>
-                                        <th> Delete </th>
-                                        <th>View Details</th>
-                                    </tr>
-                                    <Card>
+                            {!isAddClicked ?
+                                <table className="main-table">
+                                <h1> School </h1>
+                                    <Accordion>
                                         <tr>
-                                            <td> 1 </td>
-                                            <td><img src={Image} alt="img here" width="50" height="50"></img></td>
-                                            <td> School </td>
-                                            <td> <Button className="edit">Edit</Button> </td>
-                                            <td> <Button className="delete">Delete</Button> </td>
-                                            <td> <Accordion.Toggle as={Button} eventKey="0">
-                                                <Button className="view-more">View More</Button>
-                                            </Accordion.Toggle> </td>
+                                            <th> # </th>
+                                            <th> Image </th>
+                                            <th> Navigation </th>
+                                            <th> Edit </th>
+                                            <th> Delete </th>
+                                            <th>View Details</th>
                                         </tr>
-                                        <Accordion.Collapse eventKey="0">
-                                            <Card.Body>
-                                                <thead>
-                                                    <tr>
-                                                        <th>S. No.</th>
-                                                        <th>Image</th>
-                                                        <th>Class/Category</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td> 1.1 </td>
-                                                        <td><img src={Image} alt="img here" width="50" height="50"></img></td>
-                                                        <td> Class X </td>
-                                            <td> <Button className="edit">Edit</Button> </td>
-                                            <td> <Button className="delete">Delete</Button> </td>
-                                                    </tr>
-                                                </tbody>
-                                            </Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
+                                        <Card>
+                                            <tr>
+                                                <td> 1 </td>
+                                                <td><img src={Image} alt="img here" width="50" height="50"></img></td>
+                                                <td> School </td>
+                                                <td> <Button className="edit">Edit</Button> </td>
+                                                <td> <Button className="delete">Delete</Button> </td>
+                                                <td> <Accordion.Toggle as={Button} eventKey="0">
+                                                    <Button className="view-more">View More</Button>
+                                                </Accordion.Toggle> </td>
+                                            </tr>
+                                            <Accordion.Collapse eventKey="0">
+                                                <Card.Body>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>S. No.</th>
+                                                            <th>Image</th>
+                                                            <th>Class/Category</th>
+                                                            <th>Edit</th>
+                                                            <th>Delete</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> 1.1 </td>
+                                                            <td><img src={Image} alt="img here" width="50" height="50"></img></td>
+                                                            <td> Class X </td>
+                                                            <td> <Button className="edit">Edit</Button> </td>
+                                                            <td> <Button className="delete">Delete</Button> </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
 
-                                    <Card>
-                                        <tr>
-                                            <td> 2 </td>
-                                            <td><img src={Image} alt="img here" width="50" height="50"></img></td>
-                                            <td> School </td>
-                                            <td> <Button className="edit">Edit</Button> </td>
-                                            <td> <Button className="delete">Delete</Button> </td>
-                                            <td> <Accordion.Toggle as={Button} eventKey="1">
-                                                <Button className="view-more">View More</Button>
-                                            </Accordion.Toggle> </td>
-                                        </tr>
-                                        <Accordion.Collapse eventKey="1">
-                                            <Card.Body>Hello! I'm another body</Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                    <Card>
-                                        <tr>
-                                            <td> 3 </td>
-                                            <td><img src={Image} alt="img here" width="50" height="50"></img></td>
-                                            <td> School </td>
-                                            <td> <Button className="edit">Edit</Button> </td>
-                                            <td> <Button className="delete">Delete</Button> </td>
-                                            <td> <Accordion.Toggle as={Button} eventKey="2">
-                                                <Button className="view-more">View More</Button>
-                                            </Accordion.Toggle> </td>
-                                        </tr>
-                                        <Accordion.Collapse eventKey="2">
-                                            <Card.Body>Hello! I'm another body</Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                    <Card>
-                                        <tr>
-                                            <td> 4 </td>
-                                            <td><img src={Image} alt="img here" width="50" height="50"></img></td>
-                                            <td> School </td>
-                                            <td> <Button className="edit">Edit</Button> </td>
-                                            <td> <Button className="delete">Delete</Button> </td>
-                                            <td> <Accordion.Toggle as={Button} eventKey="3">
-                                                <Button className="view-more">View More</Button>
-                                            </Accordion.Toggle> </td>
-                                        </tr>
-                                        <Accordion.Collapse eventKey="3">
-                                            <Card.Body>Hello! I'm another body</Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                </Accordion>
+                                        <Card>
+                                            <tr>
+                                                <td> 2 </td>
+                                                <td><img src={Image} alt="img here" width="50" height="50"></img></td>
+                                                <td> School </td>
+                                                <td> <Button className="edit">Edit</Button> </td>
+                                                <td> <Button className="delete">Delete</Button> </td>
+                                                <td> <Accordion.Toggle as={Button} eventKey="1">
+                                                    <Button className="view-more">View More</Button>
+                                                </Accordion.Toggle> </td>
+                                            </tr>
+                                            <Accordion.Collapse eventKey="1">
+                                                <Card.Body>Hello! I'm another body</Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                        <Card>
+                                            <tr>
+                                                <td> 3 </td>
+                                                <td><img src={Image} alt="img here" width="50" height="50"></img></td>
+                                                <td> School </td>
+                                                <td> <Button className="edit">Edit</Button> </td>
+                                                <td> <Button className="delete">Delete</Button> </td>
+                                                <td> <Accordion.Toggle as={Button} eventKey="2">
+                                                    <Button className="view-more">View More</Button>
+                                                </Accordion.Toggle> </td>
+                                            </tr>
+                                            <Accordion.Collapse eventKey="2">
+                                                <Card.Body>Hello! I'm another body</Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                        <Card>
+                                            <tr>
+                                                <td> 4 </td>
+                                                <td><img src={Image} alt="img here" width="50" height="50"></img></td>
+                                                <td> School </td>
+                                                <td> <Button className="edit">Edit</Button> </td>
+                                                <td> <Button className="delete">Delete</Button> </td>
+                                                <td> <Accordion.Toggle as={Button} eventKey="3">
+                                                    <Button className="view-more">View More</Button>
+                                                </Accordion.Toggle> </td>
+                                            </tr>
+                                            <Accordion.Collapse eventKey="3">
+                                                <Card.Body>Hello! I'm another body</Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                    </Accordion>
 
-                            </table> : <div className="main-table">
-                                    <h1>HEYY</h1>
+                                </table>
+
+                                : <div className="form-main">
+                                    <h1>Add School Name</h1>
                                     <p>
-                                        <input type="text"></input>
-                                        <input type="file"></input>
+                                        <input type="text"> </input>
+                                        <input type="file"> </input>
                                     </p>
                                 </div>
 
