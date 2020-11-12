@@ -1,23 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Container,
     Row,
     Col,
 } from 'reactstrap';
 import Image from '../images/dummy.jpg';
-
-import { Button, Collapse, Card } from 'react-bootstrap';
-import AddSchoolForm from '../Forms/AddSchool'
+import { Button, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
+import axios from 'axios';
+
 
 const Table = () => {
-    const [open, setOpen] = useState(false);
-    const [isAddClicked, setIsAddClicked] = useState(false)
 
-    // const handleClick = () => {
-    //     setIsAddClicked(!isAddClicked)
-    //     document.getElementById("switch_button").innerHTML
-    // }
+    const [ data, setData ] = useState('')
+    const [ schoolName, setSchoolName  ] = useState('');
+    const [ schoolImage, setSchoolImage ] = useState(undefined)
+    const [ selectedImage, setSelectedImage ] = useState(undefined)
+    const [ isAddClicked, setIsAddClicked ] = useState(false)
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios(
+                'http://127.0.0.1:5000/add-school',
+            );
+
+        }
+        fetchData();
+    }, [])
+    
+    const handleChange = event => {
+        setSchoolImage(event.target.files[0])
+        setSelectedImage(URL.createObjectURL(event.target.files[0]))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        
+        formData.append(
+            'SchoolImage',
+            schoolImage,
+            schoolImage.name
+        )
+
+        let data = {
+            name: schoolName,
+        }
+
+        formData.append("data", JSON.stringify(data))
+
+        fetch('http://127.0.0.1:5000/add-school',
+        {
+            method: 'POST',
+            body: formData,
+              
+            }).then(response => { 
+            return response.json();
+        }).catch((err) => console.log(err));
+
+        setSchoolName('');
+        setSchoolImage(undefined);
+        setSelectedImage(undefined);
+        setIsAddClicked(!isAddClicked);
+    }
 
     return (
         <section className="outer-main">
@@ -122,13 +168,19 @@ const Table = () => {
                                 </Accordion>
 
                             </table></div> : <div className="main-table">
-                                    <h1>HEYY</h1>
-                                    <p>
-                                        <input type="text"></input>
-                                        <input type="file"></input>
-                                    </p>
+                                    <h1>ADD NEW SCHOOL</h1>
+                                    <form onSubmit={handleSubmit}>
+                                        <input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} type="text" placeholder="ENTER SCHOOL NAME" required></input>
+                                        <br></br>
+                                        <br></br>
+                                        <img src={selectedImage} alt="" height="200" width="200"></img>
+                                        <input type="file" onChange={handleChange} required></input>
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
+                                        <Button type="submit">ADD</Button>
+                                    </form>
                                 </div>
-
                             }
                         </div>
 
