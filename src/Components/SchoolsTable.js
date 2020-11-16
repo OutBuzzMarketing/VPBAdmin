@@ -5,14 +5,14 @@ import {
     Col,
 } from 'reactstrap';
 import Image from '../images/dummy.jpg';
-import { Button, Card } from 'react-bootstrap';
+
+import { Button, Collapse, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import axios from 'axios';
 
 
 const Table = () => {
 
-    const [ data, setData ] = useState('')
     const [ schoolName, setSchoolName  ] = useState('');
     const [ schoolImage, setSchoolImage ] = useState(undefined)
     const [ selectedImage, setSelectedImage ] = useState(undefined)
@@ -67,15 +67,13 @@ const Table = () => {
 
     return (
         <section className="outer-main">
-            <Button id="switch_button" onClick={() => setIsAddClicked(!isAddClicked)}>{!isAddClicked ? "ADD SCHOOL" : "BACK"}</Button>
+        <Button id="switch_button" onClick={() => setIsAddClicked(!isAddClicked)}>{!isAddClicked ? "Add School" : "Back"}</Button>
             <Container>
                 <Row>
                     <Col md="12">
                         <div className="table-box">
                             {!isAddClicked ?
-                                <div>
-                            <h1> School </h1>
-                                <table className="main-table">
+                            <table className="main-table">
                                 <Accordion>
                                     <tr>
                                         <th> # </th>
@@ -167,22 +165,19 @@ const Table = () => {
                                     </Card>
                                 </Accordion>
 
-                            </table></div> : <div className="main-table">
-                                    <h1>ADD NEW SCHOOL</h1>
+                                </table> 
+                          : <div className="form-main">
+                                    <h1>Add School Form </h1>
+                                    <img src={selectedImage} alt="" height="200" width="200"></img>
                                     <form onSubmit={handleSubmit}>
-                                        <input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} type="text" placeholder="ENTER SCHOOL NAME" required></input>
-                                        <br></br>
-                                        <br></br>
-                                        <img src={selectedImage} alt="" height="200" width="200"></img>
-                                        <input type="file" onChange={handleChange} required></input>
-                                        <br></br>
-                                        <br></br>
-                                        <br></br>
-                                        <Button type="submit">ADD</Button>
+                                    <label for="name"> School Name</label>
+                                        <input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} type="text" id="name" required></input>
+                                        <label for="image">Upload Image </label>
+                                        <input onChange={handleChange} type="file" id="image" required></input>
+                                        <button className="submit-form"> Submit </button>
                                     </form>
                                 </div>
-                            }
-                        </div>
+                            }</div>
 
                     </Col>
                 </Row>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Logo from '../images/logo.jpeg';
 import dashboard from '../Pages/dashboard';
 import schools from '../Pages/schools';
 import competition from '../Pages/competition';
@@ -15,6 +16,9 @@ class App extends Component {
         <Router>
           <section id="sidebar">
                   <ul id="sidebar">
+                    <li>
+                    <img src={Logo} alt="logo" width="100%"></img>
+                    </li>
                     <li>
                       <Link to="/dashboard">Dashboard</Link>
                     </li>
